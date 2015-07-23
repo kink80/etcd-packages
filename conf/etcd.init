@@ -85,7 +85,7 @@ start() {
   /sbin/start-stop-daemon --start --nicelevel $NICE \
     --chdir "$ETCD_DATA_DIR" --chuid $ETCD_USER:$ETCD_GROUP \
     --background --pidfile "$ETCD_PIDFILE" --make-pidfile \
-    --exec $DAEMON --no-close -- > $ETCD_LOGFILE 2>&1
+    --exec $DAEMON -- > $ETCD_LOGFILE 2>&1
   RETVAL=$?
   if [ $RETVAL -eq 0 ]; then
     log_success_msg "started"
